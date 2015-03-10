@@ -15,6 +15,7 @@ func main() {
 	urlPtr := flag.String("url", "http://localhost:8153/go/api/admin/config.xml", "The url of the GoCD config file")
 	userPtr := flag.String("user", "user", "The user for authentication to get the config file")
 	passwordPtr := flag.String("pwd", "pwd", "The password for the user")
+	flag.Parse()
 
 	data := GetConfigFile(*urlPtr, *userPtr, *passwordPtr)
 	if data == nil {
